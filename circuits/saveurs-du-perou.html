@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="../assets/css/tokens.css" />
 <link rel="stylesheet" href="../assets/css/kit.css" />
 <link rel="stylesheet" href="../assets/css/site.css" />
+<link rel="stylesheet" href="../assets/css/departs-groupe.css" />
 
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 <script src="../assets/js/site.js" defer></script>
@@ -247,22 +248,8 @@
           <button type="button" class="sit-book-tab" role="tab" aria-selected="false" id="tab-prive" aria-controls="panel-prive">En privé</button>
         </div>
         <div role="tabpanel" id="panel-groupe" aria-labelledby="tab-groupe">
-        <div class="sit-date-list">
-          <div class="sit-date-row ">
-            <div class="sit-date-row-d"><span class="sit-date-row-day">12 mai 2027</span><span class="sit-date-row-price">2 660 € par personne</span></div>
-            <span class="sit-date-tag sit-date-tag-ok">Départ garanti</span>
-          </div>
-          <div class="sit-date-row ">
-            <div class="sit-date-row-d"><span class="sit-date-row-day">9 juin 2027</span><span class="sit-date-row-price">2 660 € par personne</span></div>
-            <span class="sit-date-tag sit-date-tag-low">Il reste des places</span>
-          </div>
-          <div class="sit-date-row sit-date-row-complet">
-            <div class="sit-date-row-d"><span class="sit-date-row-day">14 juillet 2027</span><span class="sit-date-row-price">2 660 € par personne</span></div>
-            <span class="sit-date-tag sit-date-tag-full">Complet</span>
-          </div>
-        </div>
-        <p class="sit-booking-help">Six voyageurs minimum pour garantir le départ, douze au maximum</p>
-        <button type="button" class="btn btn-primary btn-large btn-block" data-devis="Saveurs du Pérou en petit groupe">Réserver ce départ</button>
+        <div data-departs-groupe="1003"></div>
+        <p class="sit-booking-help">Choisissez votre date ci-dessus, indiquez le nombre de voyageurs, et nous vous confirmons la place par téléphone. Aucun paiement en ligne.</p>
         </div>
         <div role="tabpanel" id="panel-prive" aria-labelledby="tab-prive" hidden>
         <div class="sit-book-field">
@@ -353,5 +340,6 @@
 <div data-include="footer"></div>
 <script src="../assets/js/gallery.js" defer></script>
 <script src="../assets/js/booking-tabs.js" defer></script>
+<script src="../assets/js/departs-groupe.js" defer></script>
 </body>
 </html>

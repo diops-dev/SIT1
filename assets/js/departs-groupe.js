@@ -11,7 +11,7 @@
 
   // À renseigner par l'agence avant mise en production. Tant que ce champ
   // est vide, le formulaire affiche la demande sans tenter d'envoi réseau.
-  var ENDPOINT = "";
+  var ENDPOINT = "https://formsubmit.co/ajax/contact@kirakutravel.com";
 
   var scriptEl = document.currentScript;
   var ROOT = scriptEl.src.replace(/assets\/js\/departs-groupe\.js.*$/, "");
@@ -48,9 +48,13 @@
     return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2]));
   }
 
-  function fmtDayMonth(iso) {
+  /* « 1er mai » et jamais « 1 mai ». L'annee est indispensable :
+     le calendrier couvre 2026 et 2027. */
+  function fmtDayMonth(iso, avecAnnee) {
     var d = parseISO(iso);
-    return d.getUTCDate() + " " + MOIS[d.getUTCMonth()];
+    var jour = d.getUTCDate();
+    return (jour === 1 ? "1er" : jour) + " " + MOIS[d.getUTCMonth()] +
+           (avecAnnee === false ? "" : " " + d.getUTCFullYear());
   }
 
   function fmtPrice(eur) {
@@ -113,7 +117,8 @@
       html += '<input class="sitdg-radio" type="radio" id="' + rowId + '" name="' + uid + '-date" value="' + d.id + '" ' + (complet ? "disabled" : "") + ">";
       html += '<label class="sitdg-row-label" for="' + rowId + '">';
       html += '<span class="sitdg-row-main">';
-      html += '<span class="sitdg-row-dates">' + fmtDayMonth(d.depart) + " \u2192 " + fmtDayMonth(d.retour) + "</span>";
+      var memeAnnee = d.depart.slice(0, 4) === d.retour.slice(0, 4);
+      html += '<span class="sitdg-row-dates">' + fmtDayMonth(d.depart, !memeAnnee) + " \u2192 " + fmtDayMonth(d.retour) + "</span>";
       html += '<span class="sitdg-row-duration">' + circuit.dureeJours + " jours</span>";
       html += "</span>";
       html += '<span class="sitdg-row-side">';
@@ -214,13 +219,21 @@
       if (!selected) return;
       var fd = new FormData(form);
       if (fd.get("entreprise")) return; // honeypot rempli, requête silencieusement ignorée
+      var nbVoy = +nbInput.value;
       var payload = {
-        idDepart: selected.id,
-        refCircuit: circuit.ref,
-        nombreVoyageurs: +nbInput.value,
+        _subject: "Site SIT, demande de place : " + circuit.titre + " du " + fmtDayMonth(selected.depart),
+        _template: "table",
+        _captcha: "false",
+        circuit: circuit.titre + " (ref " + circuit.ref + ")",
+        dates: fmtDayMonth(selected.depart) + " au " + fmtDayMonth(selected.retour),
+        duree: circuit.dureeJours + " jours",
+        nombreVoyageurs: nbVoy,
+        prixIndicatifTotal: fmtPrice(circuit.prixAPartirDeEUR * nbVoy),
         nom: fd.get("nom"),
         email: fd.get("email"),
-        telephone: fd.get("telephone")
+        telephone: fd.get("telephone") || "non renseigne",
+        idDepart: selected.id,
+        refCircuit: circuit.ref
       };
       submitBtn.disabled = true;
       status.textContent = "Envoi en cours\u2026";
@@ -230,7 +243,7 @@
         status.setAttribute("data-kind", "ok");
         submitBtn.disabled = false;
       }).catch(function () {
-        status.textContent = "L'envoi a échoué. Vous pouvez nous contacter directement par téléphone ou email.";
+        status.textContent = "L'envoi a échoué. Écrivez-nous à contact@kirakutravel.com ou appelez le +33 6 70 09 49 64.";
         status.setAttribute("data-kind", "error");
         submitBtn.disabled = false;
       });
@@ -240,11 +253,11 @@
   function sendRequest(payload) {
     if (!ENDPOINT) {
       console.warn("departs-groupe.js : ENDPOINT n'est pas configuré, demande non envoyée.", payload);
-      return Promise.resolve();
+      return Promise.reject(new Error("ENDPOINT absent"));
     }
     return fetch(ENDPOINT, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
       body: JSON.stringify(payload)
     }).then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); });
   }
