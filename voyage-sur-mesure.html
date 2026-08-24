@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Voyage sur mesure au Pérou, parlons de votre projet · Solidaire Inca Tour</title>
+<meta name="description" content="Répondez à quelques questions sur vos envies, votre rythme et vos dates. Frédéric vous rappelle avec une première proposition d'itinéraire, sans engagement." />
+<link rel="canonical" href="https://www.solidaireincatour.fr/voyage-sur-mesure.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Solidaire Inca Tour" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:title" content="Voyage sur mesure au Pérou, parlons de votre projet · Solidaire Inca Tour" />
+<meta property="og:description" content="Répondez à quelques questions sur vos envies, votre rythme et vos dates. Frédéric vous rappelle avec une première proposition d'itinéraire, sans engagement." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#02612A" />
+<link rel="icon" type="image/png" href="assets/bird-gold.png" />
+<link rel="stylesheet" href="assets/css/tokens.css" />
+<link rel="stylesheet" href="assets/css/kit.css" />
+<link rel="stylesheet" href="assets/css/site.css" />
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/partials.js" defer></script>
+<script src="assets/js/devis.js" defer></script>
+
+<style>
+/* Styles propres à cette page. Sur le site réel : assets/css/formulaire.css, chargé uniquement ici. */
+.vsm-main{max-width:840px;margin:0 auto;padding:48px 24px 96px}
+.vsm-progress{display:flex;gap:8px;margin-bottom:8px}
+.vsm-progress span{flex:1;height:4px;border-radius:999px;background:var(--sit-line-soft)}
+.vsm-progress span.done{background:var(--sit-green)}
+.vsm-step-label{font-family:var(--font-sans);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--fg4);margin:14px 0 4px}
+.vsm-h1{font-family:var(--font-display);font-size:clamp(1.8rem,2.5vw + 1rem,2.6rem);color:var(--sit-green-deep);font-weight:400;margin:2px 0 8px}
+.vsm-lead{font-family:var(--font-serif);font-style:italic;color:var(--fg2);margin:0 0 36px;max-width:600px}
+.vsm-field{margin-bottom:30px}
+.vsm-label{display:block;font-family:var(--font-sans);font-weight:600;font-size:15px;color:var(--fg1);margin-bottom:4px}
+.vsm-legend{font-family:var(--font-sans);font-weight:600;font-size:15px;color:var(--fg1);margin-bottom:12px;padding:0}
+.vsm-help{font-family:var(--font-serif);font-style:italic;font-size:13px;color:var(--fg4);margin:4px 0 0}
+.vsm-error{font-family:var(--font-sans);font-size:13px;color:var(--danger);margin:6px 0 0;font-weight:600}
+.vsm-input,.vsm-select,.vsm-textarea{
+  width:100%;font-family:var(--font-sans);font-size:16px;padding:14px 16px;
+  border:1.5px solid var(--border);border-radius:8px;background:var(--bg-elev);color:var(--fg1);min-height:44px;
+}
+.vsm-input:focus,.vsm-select:focus,.vsm-textarea:focus{outline:none;border-color:var(--sit-green);box-shadow:0 0 0 3px rgba(3,131,52,.15)}
+.vsm-textarea{resize:vertical}
+.vsm-row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+fieldset{border:none;margin:0;padding:0}
+.vsm-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.vsm-card{
+  display:flex;align-items:center;gap:10px;min-height:44px;padding:14px 16px;border:1.5px solid var(--border);
+  border-radius:10px;font-family:var(--font-sans);font-size:15px;color:var(--fg1);cursor:pointer;background:var(--bg-elev);
+}
+.vsm-card:has(input:checked){border-color:var(--sit-green);background:var(--sit-green-mist);color:var(--sit-green-deep);font-weight:600}
+.vsm-card:has(input:focus-visible){outline:2px solid var(--focus-ring);outline-offset:2px}
+.vsm-card input{width:18px;height:18px;accent-color:var(--sit-green);flex-shrink:0}
+.vsm-stepper{display:flex;align-items:center;border:1.5px solid var(--border);border-radius:10px;overflow:hidden}
+.vsm-stepper button{width:44px;height:44px;border:none;background:var(--sit-paper);font-size:20px;color:var(--sit-green-deep);cursor:pointer}
+.vsm-stepper input{flex:1;text-align:center;border:none;font-family:var(--font-sans);font-size:16px;min-height:44px}
+.vsm-checkbox-row{display:flex;align-items:flex-start;gap:10px;font-family:var(--font-sans);font-size:14px;color:var(--fg2);margin-top:10px}
+.vsm-checkbox-row input{width:20px;height:20px;margin-top:1px;accent-color:var(--sit-green);flex-shrink:0}
+.vsm-actions{display:flex;justify-content:space-between;align-items:center;margin-top:44px;gap:16px}
+.vsm-btn-back{background:none;border:none;font-family:var(--font-sans);font-weight:600;font-size:14px;color:var(--fg3);cursor:pointer;padding:10px 4px}
+.vsm-btn-back:hover{color:var(--sit-green-deep)}
+.vsm-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.vsm-confirm{text-align:center}
+.vsm-confirm h1{margin-bottom:10px}
+.vsm-confirm-cta{margin:32px 0 20px}
+.vsm-confirm-later{font-family:var(--font-sans);font-size:14px;color:var(--fg3)}
+.vsm-char-count{font-family:var(--font-mono);font-size:11px;color:var(--fg4);text-align:right;margin-top:4px}
+@media (max-width:640px){.vsm-row2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div data-include="header" data-active="voyages"></div>
+
+<div id="app"></div>
+
+<div data-include="footer"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous" defer></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous" defer></script>
+<script src="assets/js/voyage-sur-mesure.js" defer></script>
+</body>
+</html>

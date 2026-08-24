@@ -1,0 +1,163 @@
+/* ==========================================================
+   Solidaire Inca Tour, site-level extras
+   Classes used by the multi-page static site (Le Pérou / régions)
+   on top of tokens.css + kit.css.
+   ========================================================== */
+.sit-container-tight{max-width:760px;margin:0 auto;padding:0 32px;}
+.sit-page-hero{background:linear-gradient(135deg,var(--sit-ink) 0%,var(--sit-green-deep) 100%);padding:64px 0 56px;}
+.sit-page-hero h1{color:var(--sit-cream);margin:14px 0 12px;font-size:clamp(2.25rem,3vw + 1rem,3.25rem);}
+.sit-page-hero .eyebrow{color:var(--sit-gold-soft);}
+.sit-page-hero .lead{color:rgba(250,244,230,.88);max-width:640px;}
+.sit-breadcrumb{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-family:var(--font-sans);font-size:13px;font-weight:500;}
+.sit-breadcrumb a{text-decoration:none;}
+.sit-breadcrumb a:hover{color:var(--sit-gold);}
+.sit-breadcrumb .current{font-weight:600;}
+.sit-dest-card{display:flex;flex-direction:column;text-decoration:none;background:var(--bg-elev);border:1px solid var(--border-soft);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-2);transition:box-shadow var(--dur-2) var(--ease-out-soft);}
+.sit-dest-card:hover{box-shadow:var(--shadow-3);}
+.sit-dest-media{aspect-ratio:4/3;background-size:cover;background-position:center;}
+.sit-dest-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:6px;}
+.sit-dest-title{font-family:var(--font-display);font-size:22px;color:var(--sit-green-deep);font-weight:400;margin:2px 0 0;}
+.sit-dest-tag{font-family:var(--font-sans);font-size:13px;color:var(--fg3);line-height:1.55;margin:0;}
+.sit-formule-chip{display:flex;align-items:center;justify-content:center;text-align:center;padding:14px 16px;border-radius:10px;background:var(--bg-elev);border:1px solid var(--border-soft);font-family:var(--font-sans);font-weight:600;font-size:13px;color:var(--fg2);text-decoration:none;}
+.sit-formule-chip:hover{background:var(--sit-gold-wash);color:var(--sit-green-deep);}
+.sit-divider{height:1px;background:var(--border-soft);margin:44px 0;}
+.sit-faq-item{border-top:1px solid var(--border-soft);padding:16px 0;}
+.sit-faq-item:last-of-type{border-bottom:1px solid var(--border-soft);}
+.sit-faq-item summary{cursor:pointer;font-family:var(--font-serif);font-weight:600;font-size:17px;color:var(--fg1);list-style:none;}
+.sit-faq-item summary::-webkit-details-marker{display:none;}
+.sit-faq-item summary::before{content:'+ ';color:var(--sit-gold-deep);font-weight:700;}
+.sit-faq-item[open] summary::before{content:'\2212 ';}
+.sit-faq-item p{margin:12px 0 0;}
+.sit-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+.sit-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.sit-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.sit-mt-2{margin-top:16px;}
+.sit-mt-4{margin-top:28px;}
+.sit-mb-4{margin-bottom:28px;}
+@media (max-width:900px){.sit-grid-3{grid-template-columns:repeat(2,1fr);}.sit-grid-4{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:640px){.sit-grid-2,.sit-grid-3,.sit-grid-4{grid-template-columns:1fr;}}
+
+/* ---------- Carnet de route / articles ---------- */
+.sit-tag-pill{display:inline-block;font-family:var(--font-sans);font-size:12px;font-weight:600;letter-spacing:.02em;color:var(--sit-green-deep);background:var(--sit-green-mist);padding:4px 12px;border-radius:999px;}
+.sit-article-meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:6px;}
+.sit-article-body h2{margin:52px 0 16px;font-size:1.7rem;}
+.sit-article-body h2:first-child{margin-top:0;}
+.sit-article-body h3{margin:34px 0 12px;}
+.sit-article-body p{margin:0 0 16px;}
+.sit-article-body ul,.sit-article-body ol{font-family:var(--font-sans);color:var(--fg2);line-height:1.75;padding-left:20px;margin:0 0 20px;}
+.sit-article-body li{margin-bottom:6px;}
+.sit-article-body table{width:100%;border-collapse:collapse;margin:8px 0 24px;font-family:var(--font-sans);font-size:14px;}
+.sit-article-body th,.sit-article-body td{padding:10px 14px;border-bottom:1px solid var(--border-soft);text-align:left;vertical-align:top;}
+.sit-article-body thead th{background:var(--sit-green-mist);color:var(--sit-green-deep);font-weight:600;font-size:13px;}
+.sit-article-body tbody tr:last-child td{border-bottom:none;}
+.sit-article-table-wrap{overflow-x:auto;margin:0 0 24px;}
+.sit-callout{background:var(--sit-gold-wash);border-left:3px solid var(--sit-gold-deep);padding:18px 22px;border-radius:var(--radius-sm);margin:28px 0;}
+.sit-callout p{margin:0;color:var(--fg1);font-size:15px;}
+.sit-callout p+p{margin-top:10px;}
+.sit-callout-label{font-family:var(--font-sans);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--sit-clay);display:block;margin-bottom:8px;}
+.sit-sources{margin-top:48px;padding-top:20px;border-top:1px solid var(--border-soft);font-family:var(--font-sans);font-size:12.5px;color:var(--fg4);line-height:1.6;}
+.sit-article-hero-meta{font-family:var(--font-sans);font-size:13px;color:rgba(250,244,230,.75);margin-top:14px;}
+
+/* ==========================================================
+   Site 2026, ajouts de production
+   (menu mobile, accessibilité, formulaires, blocs éditoriaux)
+   ========================================================== */
+
+/* ---------- Accessibilité ---------- */
+.sit-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}
+.sit-skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--sit-green-deep);color:var(--sit-cream);padding:12px 18px;border-radius:0 0 8px 0;font-family:var(--font-sans);font-weight:600;text-decoration:none;}
+.sit-skip:focus{left:0;}
+:focus-visible{outline:2px solid var(--sit-gold);outline-offset:2px;}
+body.sit-no-scroll{overflow:hidden;}
+
+/* ---------- Barre de navigation ---------- */
+.sit-nav-scrolled{box-shadow:var(--shadow-2);}
+.sit-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:0 10px;background:none;border:1px solid var(--border);border-radius:10px;cursor:pointer;}
+.sit-burger span{display:block;height:2px;background:var(--sit-green-deep);border-radius:2px;transition:transform var(--dur-2) var(--ease-out-soft),opacity var(--dur-1) linear;}
+.sit-burger-open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.sit-burger-open span:nth-child(2){opacity:0;}
+.sit-burger-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.sit-drawer{display:none;position:sticky;top:72px;z-index:60;background:var(--bg-elev);border-bottom:1px solid var(--border);padding:18px 24px 24px;box-shadow:var(--shadow-2);}
+.sit-drawer nav{display:flex;flex-direction:column;}
+.sit-drawer nav a{font-family:var(--font-sans);font-weight:600;font-size:16px;color:var(--fg1);text-decoration:none;padding:14px 0;border-bottom:1px solid var(--border-soft);}
+.sit-drawer nav a.active{color:var(--sit-green-deep);}
+.sit-drawer-phone{display:flex;align-items:center;gap:8px;font-family:var(--font-sans);font-weight:600;color:var(--sit-green-deep);text-decoration:none;padding:18px 0;}
+.sit-drawer-phone i{width:16px;height:16px;}
+@media (max-width:980px){
+  .sit-burger{display:flex;}
+  .sit-drawer:not([hidden]){display:block;}
+}
+
+/* ---------- Pied de page ---------- */
+.sit-footer-contact a{color:inherit;text-decoration:none;}
+.sit-footer-contact a:hover{color:var(--sit-gold-soft);}
+
+/* ---------- Formulaire de devis ---------- */
+.sit-form-consent{display:flex;gap:10px;align-items:flex-start;font-family:var(--font-sans);font-size:13.5px;color:var(--fg3);line-height:1.5;}
+.sit-form-consent input{width:auto;margin-top:3px;flex:0 0 auto;}
+.sit-form-error{font-family:var(--font-sans);font-size:13.5px;font-weight:600;color:var(--danger);margin:0;}
+
+/* ---------- Accueil, bandeau de réassurance ---------- */
+.sit-trust{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:36px 0;border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);}
+.sit-trust div{display:flex;flex-direction:column;gap:6px;}
+.sit-trust i{width:22px;height:22px;color:var(--sit-gold-deep);}
+.sit-trust strong{font-family:var(--font-serif);font-size:17px;font-weight:600;color:var(--fg1);}
+.sit-trust span{font-family:var(--font-sans);font-size:13.5px;color:var(--fg3);line-height:1.55;}
+@media (max-width:900px){.sit-trust{grid-template-columns:1fr 1fr;}}
+@media (max-width:520px){.sit-trust{grid-template-columns:1fr;}}
+
+/* ---------- Cartes « façons de partir » avec photo ---------- */
+.sit-mode-media{aspect-ratio:3/2;background-size:cover;background-position:center;}
+
+/* ---------- Fiche circuit ---------- */
+.sit-fiche-tabs{position:sticky;top:72px;z-index:20;background:var(--bg);}
+.sit-key-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:26px 0 8px;padding:22px;background:var(--sit-green-mist);border-radius:14px;}
+.sit-key-facts div{display:flex;flex-direction:column;gap:4px;}
+.sit-key-facts .caption{text-transform:uppercase;letter-spacing:.08em;font-weight:600;}
+.sit-key-facts strong{font-family:var(--font-serif);font-size:16px;font-weight:600;color:var(--sit-green-deep);line-height:1.35;}
+@media (max-width:900px){.sit-key-facts{grid-template-columns:1fr 1fr;}}
+
+/* ---------- Contact ---------- */
+.sit-contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start;}
+.sit-contact-card{background:var(--bg-elev);border:1px solid var(--border-soft);border-radius:14px;padding:28px 30px;box-shadow:var(--shadow-2);}
+.sit-contact-card h3{margin:0 0 14px;}
+.sit-contact-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;}
+.sit-contact-list li{display:flex;gap:12px;align-items:flex-start;font-family:var(--font-sans);font-size:15px;color:var(--fg2);}
+.sit-contact-list i{width:18px;height:18px;color:var(--sit-gold-deep);flex:0 0 auto;margin-top:3px;}
+.sit-contact-list a{text-decoration:none;font-weight:600;}
+@media (max-width:900px){.sit-contact-grid{grid-template-columns:1fr;gap:32px;}}
+
+/* ---------- Divers ---------- */
+.sit-crumb-dark a{color:var(--sit-gold-soft);opacity:.85;text-decoration:none;}
+.sit-crumb-dark .sep{color:var(--sit-gold-soft);opacity:.5;}
+.sit-crumb-dark .current{color:var(--sit-cream);}
+.sit-center{text-align:center;}
+.sit-cta-band{margin:8px 0 0;padding:44px 0 8px;border-top:1px solid var(--border-soft);text-align:center;}
+.sit-cta-band p{font-family:var(--font-serif);font-style:italic;font-size:17px;color:var(--fg2);margin:0 0 16px;}
+@media print{.sit-nav,.sit-drawer,.sit-mobile-cta,.sit-fiche-tabs,.sit-burger{display:none !important;}}
+
+/* ---------- Éléments masqués : l'attribut hidden doit primer ---------- */
+[hidden]{display:none !important;}
+
+/* ---------- Corrections de débordement mobile ---------- */
+.sit-footer{overflow:hidden;}
+.sit-nav{flex-wrap:nowrap;}
+@media (max-width:980px){
+  .sit-nav-cta{gap:8px;}
+  .sit-nav-cta > .btn{display:none;}   /* le bouton devis est repris dans le tiroir */
+  .sit-nav{padding-left:18px;padding-right:18px;}
+}
+@media (max-width:400px){
+  .sit-nav-brand-text{display:none;}
+}
+
+/* ---------- Cartes de voyage : pied aligné quelle que soit la hauteur ---------- */
+.sit-trip-link{margin-top:auto;padding-top:10px;}
+.sit-trip-price{margin-top:4px;}
+
+
+/* ---- prise de rendez-vous et modale, ajout du 23/08/2026 ---- */
+.sit-modal-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 18px; }
+.sit-form-rdv { font-family: var(--font-sans); font-size: 13px; color: var(--fg2); margin-top: 12px; text-align: center; }
+.sit-form-rdv a { color: var(--sit-green-deep); text-decoration: underline; text-underline-offset: 2px; }
+.sit-when-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }

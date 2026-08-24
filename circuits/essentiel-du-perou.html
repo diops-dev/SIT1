@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>L'Essentiel du Pérou · 13 jours · Solidaire Inca Tour</title>
+  <meta name="description" content="13 jours de découverte du Pérou, Lima, Cusco, Machu Picchu et la vallée sacrée. En petit groupe ou en privé." />
+  <link rel="icon" type="image/png" href="../assets/bird-gold.png" />
+  <link rel="stylesheet" href="../assets/css/tokens.css" />
+  <link rel="stylesheet" href="../assets/css/kit.css" />
+  <link rel="stylesheet" href="../assets/css/site.css" />
+  <link rel="stylesheet" href="../assets/css/departs-groupe.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <script src="../assets/js/site.js" defer></script>
+  <script src="../assets/js/partials.js" defer></script>
+  <script src="../assets/js/departs-groupe.js" defer></script>
+</head>
+<body>
+
+<div data-include="header" data-active="voyages"></div>
+
+<section class="sit-page-hero">
+  <div class="sit-container">
+    <div class="sit-breadcrumb" style="margin-bottom: 12px;">
+      <a href="../index.html" style="color: var(--sit-gold-soft); opacity: 0.85;">Accueil</a>
+      <span class="sep" style="color: var(--sit-gold-soft); opacity: 0.5;">›</span>
+      <a href="index.html" style="color: var(--sit-gold-soft); opacity: 0.85;">Nos voyages</a>
+      <span class="sep" style="color: var(--sit-gold-soft); opacity: 0.5;">›</span>
+      <span class="current" style="color: var(--sit-cream);">L'Essentiel du Pérou</span>
+    </div>
+    <div class="eyebrow">13 jours · Réf. 1004</div>
+    <h1>L'Essentiel du Pérou</h1>
+    <p class="lead">Lima, Cusco, la vallée sacrée et le Machu Picchu, en petit groupe ou en privé.</p>
+  </div>
+</section>
+
+<section class="sit-section">
+  <div class="sit-container" style="display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:start;">
+    <div>
+      <h2 class="sit-section-title">Cette page est une démonstration</h2>
+      <p class="lead">Elle sert à vérifier l'intégration du composant Départs Groupe dans un panneau de réservation réel. Le contenu détaillé du circuit (jour par jour, galerie, engagement solidaire) n'est pas reproduit ici.</p>
+    </div>
+
+    <aside class="sit-booking" id="reservation">
+      <div class="sit-booking-card">
+        <div class="sit-booking-price">
+          <span class="caption">à partir de</span>
+          <strong>2&nbsp;760&nbsp;€</strong>
+          <span class="caption">par voyageur</span>
+        </div>
+        <div class="sit-booking-meta">
+          <div><i data-lucide="calendar"></i>Départs planifiés ou date de votre choix</div>
+          <div><i data-lucide="phone"></i>Conseil par Frédéric</div>
+        </div>
+
+        <div class="sit-book-tabs" role="tablist">
+          <span class="sit-book-tab sit-book-tab-active" role="tab" tabindex="0" aria-selected="true" id="tab-groupe">En petit groupe</span>
+          <span class="sit-book-tab" role="tab" tabindex="0" aria-selected="false" id="tab-prive">En privé</span>
+        </div>
+
+        <div role="tabpanel" aria-labelledby="tab-groupe" id="panel-groupe">
+          <!-- ===== Bloc d'intégration Départs Groupe (voir README-departs-groupe.md) ===== -->
+          <div data-departs-groupe="1004"></div>
+          <!-- ===== fin du bloc ===== -->
+        </div>
+
+        <div role="tabpanel" aria-labelledby="tab-prive" id="panel-prive" hidden>
+          <div class="sit-book-field">
+            <label>Nombre de voyageurs</label>
+            <div class="sit-book-stepper"><span>2 voyageurs</span><span class="sit-book-stepper-btns"><span>−</span><span>+</span></span></div>
+          </div>
+          <div class="sit-book-field">
+            <label>Date souhaitée</label>
+            <div class="sit-book-date">jj / mm / aaaa</div>
+          </div>
+          <p class="sit-booking-help">Le tarif évolue selon le nombre de voyageurs et la saison</p>
+          <button type="button" class="btn btn-primary btn-large btn-block">Demander mon devis</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<div data-include="footer"></div>
+
+<script>
+(function () {
+  var tabs = [document.getElementById('tab-groupe'), document.getElementById('tab-prive')];
+  var panels = { 'tab-groupe': document.getElementById('panel-groupe'), 'tab-prive': document.getElementById('panel-prive') };
+  function select(tab) {
+    tabs.forEach(function (t) {
+      var active = t === tab;
+      t.classList.toggle('sit-book-tab-active', active);
+      t.setAttribute('aria-selected', String(active));
+      panels[t.id].hidden = !active;
+    });
+    tab.focus();
+  }
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () { select(t); });
+    t.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); select(t); }
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        select(tabs[(tabs.indexOf(t) + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length]);
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

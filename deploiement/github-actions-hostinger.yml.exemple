@@ -1,0 +1,30 @@
+# Depot GitHub -> hebergement Hostinger, par FTP.
+# Renseigner d'abord les trois secrets dans Settings > Secrets and variables > Actions :
+#   FTP_SERVEUR      par exemple ftp.solidaireincatour.fr
+#   FTP_UTILISATEUR  identifiant FTP donne par Hostinger
+#   FTP_MOTDEPASSE   mot de passe FTP donne par Hostinger
+name: Deploiement Hostinger
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  publier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Envoi FTP vers public_html
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVEUR }}
+          username: ${{ secrets.FTP_UTILISATEUR }}
+          password: ${{ secrets.FTP_MOTDEPASSE }}
+          local-dir: ./
+          server-dir: /public_html/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.DS_Store

@@ -1,0 +1,227 @@
+/* ============================================================
+   Solidaire Inca Tour, Design Tokens
+   Type + color foundations. Import this anywhere you need
+   brand-correct text and color.
+   ============================================================ */
+
+/* ---------- Fonts (Google Fonts substitutions, see README) ---- */
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+  /* ============== CORE BRAND COLOR ============== */
+  /* Sampled from the logo PNG (avg of green + gold pixels).   */
+  --sit-green:        #038334;  /* Inca green, primary brand  */
+  --sit-green-deep:   #02612A;  /* press / dark surfaces       */
+  --sit-green-soft:   #4FA56A;  /* hover tint                  */
+  --sit-green-mist:   #E6F2EA;  /* tinted backgrounds          */
+  --sit-gold:         #F5A51A;  /* Sun gold, accent           */
+  --sit-gold-deep:    #C7820B;  /* pressed gold                */
+  --sit-gold-soft:    #FCD27A;  /* surfaces, badges            */
+  --sit-gold-wash:    #FBF1D8;  /* cream highlight             */
+
+  /* ============== EARTH / ANDES PALETTE ========= */
+  --sit-terracotta:   #C46B3A;  /* clay roofs, alpaca wool     */
+  --sit-clay:         #8C3A1F;  /* deep accent                 */
+  --sit-sky:          #5C8FAB;  /* high-altitude lake          */
+  --sit-stone:        #6E6457;  /* Machu Picchu stone          */
+  --sit-cream:        #FAF4E6;  /* paper, page background      */
+  --sit-paper:        #F4ECD8;  /* deeper kraft paper          */
+
+  /* ============== NEUTRALS ====================== */
+  --sit-ink:          #1B2218;  /* near-black, slight green    */
+  --sit-charcoal:     #2E3A2E;
+  --sit-slate:        #4A5550;
+  --sit-mute:         #7C857F;
+  --sit-line:         #D9D2BD;  /* hairline on cream           */
+  --sit-line-soft:    #ECE3CB;
+  --sit-white:        #FFFFFF;
+
+  /* ============== SEMANTIC ====================== */
+  --bg:               var(--sit-cream);
+  --bg-elev:          var(--sit-white);
+  --bg-deep:          var(--sit-ink);
+  --fg1:              var(--sit-ink);       /* primary text  */
+  --fg2:              var(--sit-charcoal);  /* secondary     */
+  --fg3:              var(--sit-slate);     /* muted         */
+  --fg4:              var(--sit-mute);      /* hint          */
+  --fg-on-dark:       var(--sit-cream);
+  --fg-on-green:      var(--sit-cream);
+  --link:             var(--sit-green-deep);
+  --border:           var(--sit-line);
+  --border-soft:      var(--sit-line-soft);
+  --focus-ring:       var(--sit-gold);
+
+  --success:          #2E7D32;
+  --warning:          var(--sit-gold);
+  --danger:           #B2371B;
+
+  /* ============== TYPE FAMILIES ================= */
+  /* Logo letter shape is a Cooper Black-style chunky slab     */
+  /* with ball terminals. Alfa Slab One is the closest free    */
+  /* match; see README for substitution note.                  */
+  --font-display:     "Alfa Slab One", "Cooper Black", "Rockwell", Georgia, serif;
+  --font-serif:       "Fraunces", "Cooper Hewitt", "Georgia", "Times New Roman", serif;
+  --font-sans:        "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-hand:        "Caveat", "Bradley Hand", cursive;   /* for occasional itinerary annotations */
+  --font-mono:        "JetBrains Mono", "SF Mono", Menlo, monospace;
+
+  /* ============== TYPE SCALE (rem, 16-base) ===== */
+  --t-display-xl:     clamp(3rem, 6vw + 1rem, 6rem);   /* @kind other */
+  --t-display:        clamp(2.5rem, 4vw + 1rem, 4.25rem); /* @kind other */
+  --t-h1:             clamp(2rem, 2.5vw + 1rem, 3rem);  /* @kind other */
+  --t-h2:             2.25rem;     /* 36 @kind font */
+  --t-h3:             1.5rem;      /* 24 @kind font */
+  --t-h4:             1.25rem;     /* 20 @kind font */
+  --t-eyebrow:        0.8125rem;   /* 13, tracking ++ @kind font */
+  --t-body-lg:        1.125rem;    /* 18 @kind font */
+  --t-body:           1rem;        /* 16 @kind font */
+  --t-small:          0.875rem;    /* 14 @kind font */
+  --t-caption:        0.75rem;     /* 12 @kind font */
+
+  /* line-height + tracking */
+  --lh-tight:         1.05;        /* @kind other */
+  --lh-snug:          1.2;         /* @kind other */
+  --lh-body:          1.6;         /* @kind other */
+  --lh-loose:         1.75;        /* @kind other */
+  --tr-eyebrow:       0.22em;      /* @kind other */
+  --tr-display:       -0.01em;     /* @kind other */
+  --tr-body:          0;           /* @kind other */
+
+  /* ============== SPACING & RADII =============== */
+  --s-1:  4px;   --s-2:  8px;  --s-3: 12px; --s-4: 16px;
+  --s-5: 24px;   --s-6: 32px;  --s-7: 48px; --s-8: 64px;
+  --s-9: 96px;   --s-10:128px;
+
+  --radius-xs:  4px;
+  --radius-sm:  8px;
+  --radius-md:  14px;
+  --radius-lg:  22px;
+  --radius-xl:  32px;
+  --radius-pill: 999px;
+
+  /* ============== ELEVATION ===================== */
+  --shadow-1: 0 1px 2px rgba(27, 34, 24, 0.06), 0 1px 1px rgba(27,34,24,0.04);
+  --shadow-2: 0 4px 14px rgba(27, 34, 24, 0.08), 0 1px 2px rgba(27,34,24,0.05);
+  --shadow-3: 0 14px 32px rgba(27, 34, 24, 0.12), 0 2px 6px rgba(27,34,24,0.06);
+  --shadow-inset: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -1px 0 rgba(27,34,24,0.06);
+  --shadow-gold: 0 6px 22px rgba(245, 165, 26, 0.35);
+
+  /* ============== MOTION ======================== */
+  --ease-out-soft:   cubic-bezier(.22, .61, .36, 1);  /* @kind other */
+  --ease-in-out:     cubic-bezier(.65, 0, .35, 1);    /* @kind other */
+  --ease-overshoot:  cubic-bezier(.34, 1.56, .64, 1); /* @kind other */
+  --dur-1: 120ms;  /* @kind other */
+  --dur-2: 220ms;  /* @kind other */
+  --dur-3: 380ms;  /* @kind other */
+  --dur-4: 600ms;  /* @kind other */
+}
+
+/* ============================================================
+   SEMANTIC ELEMENT STYLES
+   Use these as a baseline, override on a per-page basis.
+   ============================================================ */
+
+html, body {
+  background: var(--bg);
+  color: var(--fg1);
+  font-family: var(--font-sans);
+  font-size: var(--t-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.display, .h-display {
+  font-family: var(--font-display);
+  font-size: var(--t-display);
+  font-weight: 400;     /* Alfa Slab One is single-weight */
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-display);
+  color: var(--sit-green-deep);
+}
+
+h1, .h1 {
+  font-family: var(--font-display);
+  font-size: var(--t-h1);
+  font-weight: 400;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-display);
+  color: var(--sit-green-deep);
+  text-wrap: balance;
+}
+
+h2, .h2 {
+  font-family: var(--font-serif);
+  font-size: var(--t-h2);
+  font-weight: 600;
+  line-height: var(--lh-snug);
+  color: var(--fg1);
+  text-wrap: balance;
+}
+
+h3, .h3 {
+  font-family: var(--font-serif);
+  font-size: var(--t-h3);
+  font-weight: 600;
+  line-height: var(--lh-snug);
+  color: var(--fg1);
+}
+
+h4, .h4 {
+  font-family: var(--font-sans);
+  font-size: var(--t-h4);
+  font-weight: 600;
+  line-height: var(--lh-snug);
+  color: var(--fg1);
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--t-eyebrow);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-eyebrow);
+  color: var(--sit-gold-deep);
+}
+
+p, .p {
+  font-family: var(--font-sans);
+  font-size: var(--t-body);
+  line-height: var(--lh-body);
+  color: var(--fg2);
+  text-wrap: pretty;
+}
+
+.lead {
+  font-family: var(--font-serif);
+  font-size: var(--t-body-lg);
+  font-style: italic;
+  line-height: var(--lh-loose);
+  color: var(--fg2);
+}
+
+.small  { font-size: var(--t-small);   color: var(--fg3); }
+.caption{ font-size: var(--t-caption); color: var(--fg4); letter-spacing: 0.02em; }
+
+.hand {
+  font-family: var(--font-hand);
+  font-size: 1.5rem;
+  color: var(--sit-clay);
+  line-height: 1.1;
+}
+
+a, .a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(2, 97, 42, 0.35);
+  transition: color var(--dur-2) var(--ease-out-soft),
+              text-decoration-color var(--dur-2) var(--ease-out-soft);
+}
+a:hover { color: var(--sit-green); text-decoration-color: var(--sit-gold); }
+
+code, .mono { font-family: var(--font-mono); font-size: 0.9em; }
+
+/* selection */
+::selection { background: var(--sit-gold-soft); color: var(--sit-ink); }
