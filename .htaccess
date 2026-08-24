@@ -27,16 +27,30 @@ ErrorDocument 404 /404.html
 </IfModule>
 
 # ---- Cache navigateur ----
+# Les images et les polices ne changent jamais de contenu sous un meme nom :
+# on les garde un an. Les pages, les styles, les scripts et les donnees, eux,
+# changent a chaque mise a jour du site : le navigateur doit revenir demander
+# au serveur s'ils ont bouge. Le serveur repond 304 si rien n'a change, donc
+# cela ne coute presque rien, et une correction est visible immediatement.
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType image/jpeg           "access plus 1 year"
   ExpiresByType image/png            "access plus 1 year"
   ExpiresByType image/webp           "access plus 1 year"
   ExpiresByType image/svg+xml        "access plus 1 year"
-  ExpiresByType text/css             "access plus 1 month"
-  ExpiresByType application/javascript "access plus 1 month"
-  ExpiresByType application/json     "access plus 1 hour"
-  ExpiresByType text/html            "access plus 1 hour"
+  ExpiresByType image/x-icon         "access plus 1 year"
+  ExpiresByType font/woff2           "access plus 1 year"
+  ExpiresDefault                     "access plus 1 hour"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|css|js|json|xml|txt)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+    Header unset Expires
+  </FilesMatch>
+  <FilesMatch "\.(jpg|jpeg|png|webp|svg|ico|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
 </IfModule>
 
 # ---- En-tetes de securite ----
