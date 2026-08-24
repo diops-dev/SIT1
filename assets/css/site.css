@@ -161,3 +161,15 @@ body.sit-no-scroll{overflow:hidden;}
 .sit-form-rdv { font-family: var(--font-sans); font-size: 13px; color: var(--fg2); margin-top: 12px; text-align: center; }
 .sit-form-rdv a { color: var(--sit-green-deep); text-decoration: underline; text-underline-offset: 2px; }
 .sit-when-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+
+/* ---- temoignage avec photo, ajout du 23/08/2026 ---- */
+.sit-testimonial-photo { display: grid; grid-template-columns: 280px 1fr; gap: 28px; align-items: start; }
+.sit-testimonial-media { width: 100%; height: auto; border-radius: 14px; display: block; box-shadow: var(--shadow-1); }
+.sit-testimonial-photo .sit-testimonial-body { min-width: 0; }
+.sit-testimonial-photo .sit-testimonial-quote p { margin: 0 0 12px; }
+.sit-testimonial-photo .sit-testimonial-quote p:last-child { margin-bottom: 0; }
+@media (max-width: 720px) {
+  .sit-testimonial-photo { grid-template-columns: 1fr; gap: 18px; }
+  .sit-testimonial-media { max-width: 320px; }
+}
