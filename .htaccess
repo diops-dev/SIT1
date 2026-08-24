@@ -2,6 +2,13 @@
 #  Solidaire Inca Tour, configuration Apache (Hostinger)
 # ==========================================================
 
+# ---- Page d'accueil ----
+# Sans cette ligne, Apache sert le premier fichier de sa liste par defaut
+# (index.php, index.htm, ...). Si un vieux fichier de ce nom traine dans
+# public_html, l'adresse courte du site affiche l'ancienne version pendant
+# que /index.html affiche la nouvelle. On impose donc index.html.
+DirectoryIndex index.html
+
 # ---- Page d'erreur ----
 ErrorDocument 404 /404.html
 
