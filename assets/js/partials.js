@@ -99,6 +99,10 @@
           '<span>© 2026 Solidaire Inca Tour · Lima, Pérou</span>' +
           '<span>« Voyager autrement, voyager utile. »</span>' +
           '<span class="sit-footer-credit">Site réalisé par <a href="https://www.shorai-group.com" target="_blank" rel="noopener">ShorAI Consulting</a></span>' +
+          '<span class="sit-footer-legal">' +
+            '<img src="' + root + 'assets/atout-france.png" alt="Atout France" width="70" height="45" loading="lazy" />' +
+            'Agence de voyages immatriculée Atout France n° IM075260052' +
+          '</span>' +
         '</div>' +
       '</footer>';
   }
