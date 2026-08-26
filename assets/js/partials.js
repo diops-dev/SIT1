@@ -104,6 +104,10 @@
             'Agence de voyages immatriculée Atout France n° IM075260052' +
           '</span>' +
         '</div>' +
+        '<div class="sit-footer-disclaimer">' +
+          '<p>Tous nos prix sont affichés TTC, à partir de, par personne, en base chambre double, selon la saison et les dates de voyage retenues. Ils ne comprennent pas les frais de dossier et/ou d\'agence, sauf mention contraire sur votre devis. Certains suppléments (vols internationaux, entrées spécifiques, activités optionnelles, taxes locales) peuvent s\'appliquer selon l\'itinéraire choisi et ne sont pas systématiquement inclus. Nos tarifs sont établis sous réserve de disponibilité auprès de nos partenaires péruviens (hôtels, guides, transporteurs) et sont susceptibles d\'être ajustés à la hausse ou à la baisse au moment de la réservation, notamment en fonction du taux de change, de la période de voyage ou de la politique tarifaire de nos prestataires locaux. Ces ajustements sont automatiques et vous seront communiqués avant toute confirmation.</p>' +
+          '<p>La vente de voyages sur le site internet Solidaire Inca Tour est assurée par Kiraku Travel, Société par Actions Simplifiée au capital de 8 000 euros, dont le siège social est situé 47 rue Vivienne, 75002 Paris, immatriculée au Registre du Commerce et des Sociétés de Paris sous le numéro 107 168 809, immatriculation n°IM075260052 auprès d\'Atout France. Garant financier : Groupama Assurance Crédit &amp; Caution, 8-10 rue d\'Astorg, 75008 Paris. Assurance responsabilité civile professionnelle souscrite auprès de : Hiscox SA, 49 avenue de l\'Opéra, 75002 Paris.</p>' +
+        '</div>' +
       '</footer>';
   }
 
