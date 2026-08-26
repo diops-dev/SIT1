@@ -23,7 +23,7 @@ photos originales) restent dans `SITE INTERNET SIT 2026 OK`.
 ## 2. Reglages a verifier avant la mise en ligne
 
 **Adresse de reception des formulaires.** Les deux formulaires (devis et questionnaire
-sur mesure) envoient a `contact@kirakutravel.com` via FormSubmit.
+sur mesure) envoient a `contact@solidaireincatour.fr` via FormSubmit.
 A la premiere soumission, FormSubmit envoie un mail d'activation a cette adresse :
 il faut cliquer le lien une seule fois, ensuite tout arrive directement dans la boite.
 Les constantes se trouvent en tete de `assets/js/devis.js` et `assets/js/voyage-sur-mesure.js`.

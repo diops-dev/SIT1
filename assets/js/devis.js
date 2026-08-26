@@ -10,8 +10,8 @@
    un message pré-rempli, rien n'est perdu.
    ========================================================== */
 (function () {
-  var ENDPOINT = 'https://formsubmit.co/ajax/contact@kirakutravel.com';
-  var MAIL = 'contact@kirakutravel.com';
+  var ENDPOINT = 'https://formsubmit.co/ajax/contact@solidaireincatour.fr';
+  var MAIL = 'contact@solidaireincatour.fr';
   var AGENDA = 'https://calendar.app.google/NsEizZRPr2kRaaeq5';
 
   var script = document.currentScript ||

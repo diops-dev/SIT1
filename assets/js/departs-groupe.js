@@ -11,7 +11,7 @@
 
   // À renseigner par l'agence avant mise en production. Tant que ce champ
   // est vide, le formulaire affiche la demande sans tenter d'envoi réseau.
-  var ENDPOINT = "https://formsubmit.co/ajax/contact@kirakutravel.com";
+  var ENDPOINT = "https://formsubmit.co/ajax/contact@solidaireincatour.fr";
 
   var scriptEl = document.currentScript;
   var ROOT = scriptEl.src.replace(/assets\/js\/departs-groupe\.js.*$/, "");
@@ -243,7 +243,7 @@
         status.setAttribute("data-kind", "ok");
         submitBtn.disabled = false;
       }).catch(function () {
-        status.textContent = "L'envoi a échoué. Écrivez-nous à contact@kirakutravel.com ou appelez le +33 6 70 09 49 64.";
+        status.textContent = "L'envoi a échoué. Écrivez-nous à contact@solidaireincatour.fr ou appelez le +33 6 70 09 49 64.";
         status.setAttribute("data-kind", "error");
         submitBtn.disabled = false;
       });

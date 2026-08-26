@@ -11,7 +11,7 @@
 
   var TEL = '+33670094964';
   var TEL_LABEL = '+33 6 70 09 49 64';
-  var MAIL = 'contact@kirakutravel.com';
+  var MAIL = 'contact@solidaireincatour.fr';
   var AGENDA = 'https://calendar.app.google/NsEizZRPr2kRaaeq5';
 
   var NAV = [

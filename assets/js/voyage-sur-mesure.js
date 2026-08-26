@@ -5,7 +5,7 @@
 // ---- URL du planning Google Agenda à renseigner ----
 const AGENDA_URL = "https://calendar.app.google/NsEizZRPr2kRaaeq5";
 // ---- Point de terminaison d'envoi, à renseigner avant mise en ligne ----
-const ENDPOINT = "https://formsubmit.co/ajax/contact@kirakutravel.com";
+const ENDPOINT = "https://formsubmit.co/ajax/contact@solidaireincatour.fr";
 function sendLead(payload) {
   if (!ENDPOINT) {
     return Promise.resolve({
