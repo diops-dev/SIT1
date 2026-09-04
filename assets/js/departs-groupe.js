@@ -15,7 +15,7 @@
 
   var scriptEl = document.currentScript;
   var ROOT = scriptEl.src.replace(/assets\/js\/departs-groupe\.js.*$/, "");
-  var DATA_URL = ROOT + "data/departs-groupe.json";
+  var DATA_URL = ROOT + "data/departs-groupe.json?t=" + Date.now();
 
   var MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
   var THEMES = {

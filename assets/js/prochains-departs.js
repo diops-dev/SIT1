@@ -38,7 +38,7 @@
     return (j === 1 ? "1er" : j) + " " + MOIS[+t[1] - 1] + " " + t[0];
   }
 
-  fetch(ROOT + "data/departs-groupe.json")
+  fetch(ROOT + "data/departs-groupe.json?t=" + Date.now())
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function (data) {
       var today = todayISO();

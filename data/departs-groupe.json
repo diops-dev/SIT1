@@ -8,7 +8,7 @@
       2,
       3
     ],
-    "premierDepartPublieISO": "2027-05-01",
+    "premierDepartPublieISO": "2026-10-03",
     "messageSaisonFermee": "Nous ne proposons pas de départs en petit groupe de décembre à mars inclus. Cette pause est un choix assumé, pas un oubli : la saison des pluies rend les conditions de trek moins favorables dans les Andes. Pour voyager pendant cette période, deux solutions : le voyage sur mesure, à la date de votre choix, ou l'un de nos circuits proposé en formule privée.",
     "badgeFormule": "Petit groupe de 4 à 8 voyageurs, départ assuré",
     "badgeFormuleCourt": "Départ assuré",
@@ -57,7 +57,7 @@
       "prixAPartirDeEUR": 2440
     }
   ],
-  "departs": [
+  "departs": [{"id": "d0012", "refCircuit": "1001", "depart": "2026-10-03", "retour": "2026-10-17", "statut": "complet", "placesRestantes": 0, "categorie": "hors-vacances", "fete": null, "joursConcernes": [], "marchesEnVacances": false, "note": "Complet. Départ de lancement, groupe bouclé."}, {"id": "d0013", "refCircuit": "1009", "depart": "2026-10-17", "retour": "2026-10-27", "statut": "complet", "placesRestantes": 0, "categorie": "vacances-scolaires", "fete": null, "joursConcernes": ["Toussaint France"], "marchesEnVacances": true, "note": "Complet. Départ Toussaint, très demandé."}, {"id": "d0014", "refCircuit": "1001", "depart": "2026-11-14", "retour": "2026-11-28", "statut": "complet", "placesRestantes": 0, "categorie": "hors-vacances", "fete": null, "joursConcernes": [], "marchesEnVacances": false, "note": "Complet. Deuxième départ El Inti de la saison 2026."}, {"id": "d0015", "refCircuit": "1005", "depart": "2026-12-05", "retour": "2026-12-22", "statut": "complet", "placesRestantes": 0, "categorie": "hors-vacances", "fete": null, "joursConcernes": [], "marchesEnVacances": false, "note": "Complet. Seul départ Grand Sud de décembre."}, {"id": "d0016", "refCircuit": "1009", "depart": "2027-04-03", "retour": "2027-04-13", "statut": "ouvert", "placesRestantes": 8, "categorie": "vacances-scolaires", "fete": null, "joursConcernes": ["Zone C"], "marchesEnVacances": true, "note": ""}, {"id": "d0017", "refCircuit": "1004", "depart": "2027-04-10", "retour": "2027-04-22", "statut": "ouvert", "placesRestantes": 8, "categorie": "vacances-scolaires", "fete": null, "joursConcernes": ["Zone A"], "marchesEnVacances": true, "note": ""}, {"id": "d0018", "refCircuit": "1001", "depart": "2027-04-17", "retour": "2027-05-01", "statut": "ouvert", "placesRestantes": 8, "categorie": "vacances-scolaires", "fete": null, "joursConcernes": ["Zone B"], "marchesEnVacances": true, "note": ""}, 
     {
       "id": "d0001",
       "refCircuit": "1009",
