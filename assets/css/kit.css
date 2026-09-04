@@ -27,7 +27,7 @@
   white-space: nowrap;
 }
 .btn-large { font-size: 17px; padding: 16px 28px; }
-.btn-block { display: flex; width: 100%; justify-content: center; }
+.btn-block { display: flex; width: 100%; box-sizing: border-box; justify-content: center; }
 
 .btn-primary { background: var(--sit-green); color: var(--sit-cream); }
 .btn-primary:hover { box-shadow: var(--shadow-gold); transform: translateY(-1px); }
